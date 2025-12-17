@@ -217,46 +217,155 @@ body {
   color: #7f8c8d;
 }
 
+/* Responsive - Tablette */
+@media (max-width: 1024px) {
+  .page-transactions {
+    padding: 15px;
+  }
+
+  .en-tete-tableau {
+    grid-template-columns: 60px 1fr 1fr 100px 140px;
+    font-size: 0.9rem;
+  }
+
+  .ligne-transaction {
+    grid-template-columns: 60px 1fr 1fr 100px 140px;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
+
 /* Responsive - Mobile */
 @media (max-width: 768px) {
+  .page-transactions {
+    padding: 10px;
+  }
+
+  .en-tete-page h1 {
+    font-size: 1.5rem;
+  }
+
   .en-tete-tableau {
     display: none;
   }
 
   .ligne-transaction {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 15px;
+    gap: 15px;
+    padding: 20px 15px;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .corps-liste {
+    gap: 10px;
+    background: transparent;
+  }
+
+  .conteneur-liste-transactions {
+    background: transparent;
+    box-shadow: none;
   }
 
   .cellule {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .cellule:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   .label-mobile {
-    display: inline;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #666;
+    min-width: 80px;
+  }
+
+  .valeur {
+    text-align: right;
+  }
+
+  .cellule-actions {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 12px;
+    border-top: 2px solid #e9ecef;
+    margin-top: 8px;
   }
 
   .conteneur-actions {
-    flex-direction: column;
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .btn-action {
-    width: 100%;
+    flex: 1;
+    padding: 10px;
+    font-size: 0.9rem;
   }
 
   .barre-filtres {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     align-items: stretch;
+    padding: 12px;
   }
 
   .groupe-filtres {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .groupe-filtres label {
+    font-size: 0.9rem;
+    white-space: nowrap;
   }
 
   .selecteur-filtre {
-    width: 100%;
+    flex: 1;
+  }
+
+  .compteur-resultats {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+  }
+
+  .montant-valeur {
+    font-size: 1rem;
+  }
+
+  .badge-statut {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Responsive - Très petit mobile */
+@media (max-width: 480px) {
+  .en-tete-page h1 {
+    font-size: 1.3rem;
+  }
+
+  .ligne-transaction {
+    padding: 15px 12px;
+  }
+
+  .btn-action {
+    font-size: 0.85rem;
+    padding: 8px;
   }
 }

@@ -35,7 +35,7 @@ const LigneTransaction = ({ transaction, surVoirDetails, surAnnuler }) => {
    * @returns {boolean}
    */
   const peutEtreAnnulee = () => {
-    return statut === 'EN_ATTENTE' || statut === 'SUCCES';
+    return statut === 'EN_ATTENTE';
   };
 
   return (
