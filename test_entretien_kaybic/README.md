@@ -50,13 +50,14 @@ src/
 ## Captures d'écran
 
 ### Desktop
-![alt text](image-1.png)
-
+[screenshots/image.png]
 ### Mobile
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-![alt text](image-5.png)
+[screenshots/image-1.png]
+[screenshots/image-2.png]
+[screenshots/image-3.png]
+[screenshots/image-4.png]
+[screenshots/image-5.png]
+
 # Test 2 - Intégration & Consommation d'API
 Les données des transactions sont récupérées via une API REST mockée créée avec MockAPI.
 L'appel API est effectué au chargement de la page.
