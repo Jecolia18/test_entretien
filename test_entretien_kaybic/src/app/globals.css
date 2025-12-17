@@ -157,12 +157,12 @@ body {
 
 .badge-succes {
   background-color: #d4edda;
-  color: #155724;
+  color: #15572b;
 }
 
 .badge-attente {
   background-color: #fff3cd;
-  color: #856404;
+  color: #ffde71;
 }
 
 .badge-echec {
@@ -187,12 +187,12 @@ body {
 }
 
 .btn-voir {
-  background-color: #007bff;
+  background-color: #19656e;
   color: white;
 }
 
 .btn-voir:hover {
-  background-color: #0056b3;
+  background-color: #df74ed;
 }
 
 .btn-annuler {
@@ -368,4 +368,61 @@ body {
     font-size: 0.85rem;
     padding: 8px;
   }
+}
+/* Messages de chargement et erreur */
+.message-chargement,
+.message-erreur {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 20px;
+}
+
+.message-chargement p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.message-erreur {
+  color: #d94e5c;
+}
+
+.message-erreur p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+/* Spinner de chargement */
+.conteneur-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spinner-rotation 1s linear infinite;
+}
+
+@keyframes spinner-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.texte-chargement {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
 }

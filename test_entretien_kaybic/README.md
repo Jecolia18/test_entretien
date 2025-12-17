@@ -2,7 +2,11 @@
 
 ## Description
 Interface web responsive affichant une liste de transactions avec statuts et actions.
-
+Cette page présente une liste de transactions avec :
+- montant, date et statut
+- badges de statut différenciés
+- actions contextuelles selon l’état de la transaction
+Les données sont simulées via un mock local.
 ## Technologies
 - React / Next.js 16
 - JavaScript (ES6+)

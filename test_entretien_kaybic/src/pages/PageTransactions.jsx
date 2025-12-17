@@ -1,15 +1,42 @@
 'use client';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import ListeTransactions from '../composants/ListeTransactions';
-import { transactions as transactionsInitiales } from '../donnees/transactionsMock';
+import { obtenirTransactions, mettreAJourTransaction } from '../services/transactionsApi';
 
 /**
  * Page principale affichant la liste des transactions
- * Gère l'état et les actions sur les transactions
+ * Récupère les données depuis l'API MockAPI
  */
 const PageTransactions = () => {
-  const [transactions, setTransactions] = useState(transactionsInitiales);
+  const [transactions, setTransactions] = useState([]);
   const [filtreStatut, setFiltreStatut] = useState('TOUS');
+  const [chargement, setChargement] = useState(true);
+  const [erreur, setErreur] = useState(null);
+
+  /**
+   * Récupère les transactions au chargement du composant
+   */
+  useEffect(() => {
+    chargerTransactions();
+  }, []);
+
+  /**
+   * Charge les transactions depuis l'API
+   */
+  const chargerTransactions = async () => {
+    try {
+      setChargement(true);
+      setErreur(null);
+      const donnees = await obtenirTransactions();
+      setTransactions(donnees);
+    } catch (err) {
+      setErreur('Impossible de charger les transactions. Veuillez réessayer.');
+      console.error(err);
+    } finally {
+      setChargement(false);
+    }
+  };
 
   /**
    * Gère l'action "Voir les détails" d'une transaction
@@ -24,13 +51,22 @@ const PageTransactions = () => {
    * Gère l'annulation d'une transaction
    * @param {number} idTransaction - ID de la transaction à annuler
    */
-  const gererAnnulation = (idTransaction) => {
+  const gererAnnulation = async (idTransaction) => {
     if (window.confirm('Êtes-vous sûr de vouloir annuler cette transaction ?')) {
-      setTransactions(transactions.map(t => 
-        t.id === idTransaction 
-          ? { ...t, statut: 'ECHEC' }
-          : t
-      ));
+      try {
+        // Mise à jour via l'API
+        await mettreAJourTransaction(idTransaction, { statut: 'ECHEC' });
+        
+        // Mise à jour locale
+        setTransactions(transactions.map(t => 
+          t.id === idTransaction 
+            ? { ...t, statut: 'ECHEC' }
+            : t
+        ));
+      } catch (err) {
+        alert('Erreur lors de l\'annulation de la transaction.');
+        console.error(err);
+      }
     }
   };
 
@@ -46,6 +82,35 @@ const PageTransactions = () => {
   };
 
   const transactionsFiltrees = obtenirTransactionsFiltrees();
+
+  // Affichage pendant le chargement
+  if (chargement) {
+    return (
+      <div className="page-transactions">
+        <div className="conteneur-spinner">
+          <div className="spinner"></div>
+          <p className="texte-chargement">Chargement des transactions...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Affichage en cas d'erreur
+  if (erreur) {
+    return (
+      <div className="page-transactions">
+        <div className="message-erreur">
+          <p>❌ {erreur}</p>
+          <button 
+            onClick={chargerTransactions}
+            className="btn-action btn-voir"
+          >
+            Réessayer
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="page-transactions">
