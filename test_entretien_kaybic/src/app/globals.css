@@ -1,0 +1,262 @@
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Page Transactions */
+.page-transactions {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.en-tete-page {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.en-tete-page h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.sous-titre {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Barre de filtres */
+.barre-filtres {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.groupe-filtres {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.groupe-filtres label {
+  font-weight: 500;
+  color: #555;
+}
+
+.selecteur-filtre {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+}
+
+.compteur-resultats {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Liste des transactions */
+.conteneur-liste-transactions {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.en-tete-tableau {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 120px 150px;
+  gap: 15px;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.corps-liste {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ligne de transaction */
+.ligne-transaction {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 120px 150px;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.ligne-transaction:hover {
+  background-color: #f8f9fa;
+}
+
+.ligne-transaction:last-child {
+  border-bottom: none;
+}
+
+.cellule {
+  display: flex;
+  align-items: center;
+}
+
+.label-mobile {
+  display: none;
+  font-weight: 600;
+  margin-right: 8px;
+  color: #555;
+}
+
+.valeur {
+  color: #2c3e50;
+}
+
+.montant-valeur {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.devise {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-left: 4px;
+}
+
+/* Badges de statut */
+.badge-statut {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-succes {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge-attente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge-echec {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Actions */
+.conteneur-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-voir {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-voir:hover {
+  background-color: #0056b3;
+}
+
+.btn-annuler {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-annuler:hover {
+  background-color: #c82333;
+}
+
+.btn-action:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Message vide */
+.message-vide {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .en-tete-tableau {
+    display: none;
+  }
+
+  .ligne-transaction {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .cellule {
+    justify-content: space-between;
+  }
+
+  .label-mobile {
+    display: inline;
+  }
+
+  .conteneur-actions {
+    flex-direction: column;
+  }
+
+  .btn-action {
+    width: 100%;
+  }
+
+  .barre-filtres {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .groupe-filtres {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .selecteur-filtre {
+    width: 100%;
+  }
+}
