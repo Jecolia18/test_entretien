@@ -100,7 +100,7 @@ const PageTransactions = () => {
     return (
       <div className="page-transactions">
         <div className="message-erreur">
-          <p>❌ {erreur}</p>
+          <p>{erreur}</p>
           <button 
             onClick={chargerTransactions}
             className="btn-action btn-voir"

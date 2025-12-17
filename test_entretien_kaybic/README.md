@@ -57,3 +57,18 @@ src/
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+# Test 2 - Intégration & Consommation d'API
+Les données des transactions sont récupérées via une API REST mockée créée avec MockAPI.
+L'appel API est effectué au chargement de la page.
+Les états suivants sont gérés: 
+- chargement des données,
+- affichage des transactions
+- gestion des erreurs en cas d'échec de la requête.
+
+API utilisée:   MockAPI : https://6942af7069b12460f3126625.mockapi.io/
+
+# Test 3 - Réflexion UX
+### Proposition d'amélioration: 
+- Language naturel : remplacer le vocabulaire bancaire par des phrases simples au sein de l'application.
+- utiliser des icônes plus explicites
+- intégrer des petites vidéos de 15 secondes sans son pour montrer comment faire des actions spécifiques sur l'application
