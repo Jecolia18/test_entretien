@@ -50,13 +50,13 @@ src/
 ## Captures d'écran
 
 ### Desktop
-[screenshots/image.png]
+![vue desktop](screenshots/image.png)
 ### Mobile
-[screenshots/image-1.png]
-[screenshots/image-2.png]
-[screenshots/image-3.png]
-[screenshots/image-4.png]
-[screenshots/image-5.png]
+![Mobile 1](screenshots/image-1.png)
+![Mobile 2](screenshots/image-2.pn)
+![Mobile 3](screenshots/image-3.png)
+![Mobile 4](screenshots/image-4.png)
+![Mobile 5](screenshots/image-5.png)
 
 # Test 2 - Intégration & Consommation d'API
 Les données des transactions sont récupérées via une API REST mockée créée avec MockAPI.
