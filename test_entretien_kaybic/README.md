@@ -16,7 +16,7 @@ Interface web responsive affichant une liste de transactions avec statuts et act
 - Design responsive (mobile, tablette, desktop)
 - Annulation conditionnelle (uniquement transactions "En attente")
 
-## 🚀 Installation
+##  Installation
 
 \`\`\`bash
 npm install
@@ -25,7 +25,7 @@ npm run dev
 
 Ouvrir [http://localhost:3000](http://localhost:3000)
 
-## 📁 Structure du projet
+##  Structure du projet
 
 \`\`\`
 src/
@@ -49,4 +49,7 @@ src/
 ![alt text](image-1.png)
 
 ### Mobile
-[Insérer capture mobile]
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
